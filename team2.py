@@ -8,7 +8,7 @@
 
 team_name = "Team Zander" # Only 11 chars displayed.
 strategy_name = 'Destroy'
-strategy_description = 'We dont decide, We just do.'
+strategy_description = 'We dont decide, We just do!'
     
 def move(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
@@ -17,7 +17,8 @@ def move(my_history, their_history, my_score, their_score):
     Make my move.
     Returns 'c' or 'b'. 
     '''
-
+        if import team0 return 'b':
+            return 'c'
     # my_history: a string with one letter (c or b) per round that has been played with this opponent.
     # their_history: a string of the same length as history, possibly empty. 
     # The first round between these two players is my_history[0] and their_history[0].
@@ -66,3 +67,15 @@ if __name__ == '__main__':
               my_score=0, 
               their_score=0,
               result='b')             
+    # Test 3: If they betray then collude
+    test_move(their_history='bbb'
+              my_history='ccc',
+              # Note the scores are for testing move().
+              # The history and scores don't need to match unless
+              # that is relevant to the test of move(). Here,
+              # the simulation (if working correctly) would have awarded 
+              # 300 to me and -750 to them. This test will pass if and only if
+              # move('bbb', 'ccc', 0, 0) returns 'b'.
+              my_score=0,
+              their_score=0,
+              result='c')
