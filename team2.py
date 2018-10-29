@@ -6,18 +6,18 @@
 #     move: A function that returns 'c' or 'b'
 ####
 
-team_name = 'The name the team gives to itself' # Only 10 chars displayed.
-strategy_name = 'The name the team gives to this strategy'
-strategy_description = 'How does this strategy decide?'
+team_name = "Team Zander" # Only 11 chars displayed.
+strategy_name = 'Destroy'
+strategy_description = 'We dont decide, We just do!'
     
 def move(my_history, their_history, my_score, their_score):
-    ''' Arguments accepted: my_history, their_history are strings.
+    ''' Arguments accepted: my_history, their_history, their_move, my_move are strings.
     my_score, their_score are ints.
     
     Make my move.
     Returns 'c' or 'b'. 
     '''
-
+    
     # my_history: a string with one letter (c or b) per round that has been played with this opponent.
     # their_history: a string of the same length as history, possibly empty. 
     # The first round between these two players is my_history[0] and their_history[0].
@@ -26,13 +26,36 @@ def move(my_history, their_history, my_score, their_score):
     # Analyze my_history and their_history and/or my_score and their_score.
     # Decide whether to return 'c' or 'b'.
     
-    return 'c'
+    if their_history=='c':
+        return 'c'
+    if their_history=='cc':
+        return 'c'
+    if their_history=='ccc':
+        return 'c'
+    if their_history=='b':
+        return 'b'
+    if their_history=='bb':
+        return 'b'
+    if their_history=='bbb':
+        return 'b'
+    if their_history=='ccb':
+        return 'c'
+    if their_history=='cbb':
+        return 'b'
+    if their_history=='cbc':
+        return 'c'
+    if their_history=='bcc':
+        return 'b'
+    if their_history=='bbc':
+        return 'b'
+    if their_history=='bcb':
+        return 'b'
 
     
 def test_move(my_history, their_history, my_score, their_score, result):
     '''calls move(my_history, their_history, my_score, their_score)
     from this module. Prints error if return value != result.
-    Returns True or False, dpending on whether result was as expected.
+    Returns True or False, depending on whether result was as expected.
     '''
     real_result = move(my_history, their_history, my_score, their_score)
     if real_result == result:
@@ -65,4 +88,4 @@ if __name__ == '__main__':
               # move('bbb', 'ccc', 0, 0) returns 'b'.
               my_score=0, 
               their_score=0,
-              result='b')             
+              result='b')

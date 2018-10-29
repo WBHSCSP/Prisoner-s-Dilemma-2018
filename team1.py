@@ -7,8 +7,8 @@
 ####
 
 team_name = 'Slytherin' # Only 10 chars displayed.
-strategy_name = 'No Survivors'
-strategy_description = 'Read the strategy name'
+strategy_name = 'Crash this plane'
+strategy_description = 'WITH NO SURVIVORS!'
     
 def move(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
